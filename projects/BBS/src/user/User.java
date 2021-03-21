@@ -7,10 +7,10 @@ public class User {
 	private String userName;
 	private String userGender;
 	private String userEmail;
+	
 	public String getUserID() {
 		return userID;
 	}
-	
 	public void setUserID(String userID) {
 		this.userID = userID;
 	}
