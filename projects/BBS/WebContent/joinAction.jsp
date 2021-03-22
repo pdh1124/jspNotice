@@ -18,7 +18,19 @@
 </head>
 <body>
 	<%	
-		
+	//로그인 완료된 회원은 로그인,회원가입 버튼을 안보이게 하기 위함
+		/* String userID = null;
+		if(session.getAttribute("userID") != null) { //userID로 세션이 존재 한다면
+			userID = (String) session.getAttribute("userID"); //userID라는 변수가 자신에게 할당된 세션ID를 담을 수 있도록 만듦
+		}
+		if(userID != null) { //이미 로그인이 된사람은 또다시 로그인, 회원가입을 할 수 없도록
+			PrintWriter script = response.getWriter();
+			script.println("<script>");
+			script.println("alert('이미 로그인이 되어있습니다.')");
+			script.println("location.href = 'main.jsp'");
+			script.println("</script>");
+		} */
+			
 		if(user.getUserID() == null || user.getUserPassword() == null || user.getUserName() == null || user.getUserGender() == null || user.getUserEmail() == null) {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
