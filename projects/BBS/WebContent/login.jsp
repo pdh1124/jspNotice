@@ -8,6 +8,7 @@
 <meta name="viewport" content="width=device-width", initial-scale="1">
 <!-- 루트 폴더에 부트스트랩을 참조하는 링크 -->
 <link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/custom.css">
 <title>JSP 게시판 웹 사이트</title>
 </head>
 <body>
