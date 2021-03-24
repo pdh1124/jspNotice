@@ -117,6 +117,7 @@ public class BbsDAO {
 		
 		//글 내용을 추가하는 함수
 		public Bbs getBbs(int bbsID) {
+			return null;
 			
 		}
 }
