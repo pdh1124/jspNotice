@@ -115,9 +115,26 @@ public class BbsDAO {
 		}
 		
 		
-		//글 내용을 추가하는 함수
+		//글 내용을 불러오는 함수
 		public Bbs getBbs(int bbsID) {
+			String SQL = "SELECT * FROM BBS WHERE bbsID = ?"; 
+			try {
+				PreparedStatement pstmt = conn.prepareStatement(SQL); //SQL를 실행 준비단계로 만들어 줌
+				pstmt.setInt(1, bbsID);
+				rs = pstmt.executeQuery();
+				if (rs.next()) { //결과가 하나라도 존재한다면
+					Bbs bbs = new Bbs(); //bbs라는 하나의 인스턴스를 만들어서
+					bbs.setBbsID(rs.getInt(1));
+					bbs.setBbsTitle(rs.getString(2));
+					bbs.setUserID(rs.getString(3));
+					bbs.setBbsDate(rs.getString(4));
+					bbs.setBbsContent(rs.getString(5));
+					bbs.setBbsAvailable(rs.getInt(6));
+					return bbs;
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 			return null;
-			
 		}
 }
